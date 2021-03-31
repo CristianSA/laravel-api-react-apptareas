@@ -44,6 +44,6 @@ class UserController extends Controller
     }
     public function usuarioData(){
         $user = Auth::user();
-        return $user;
+        return response()->json($user, 201);
     }
 }
