@@ -30,8 +30,11 @@
         "@fortawesome/free-solid-svg-icons": "^5.15.3",
         "@fortawesome/react-fontawesome": "^0.1.14",
         "bootstrap-switch-button-react": "^1.2.0",
+        "history": "^5.0.0",
         "moment": "^2.29.1",
         "react-datepicker": "^3.6.0",
+        "react-flash-message": "^1.0.5",
+        "react-loader-spinner": "^4.0.0",
         "react-moment": "^1.1.1",
         "react-router-dom": "^5.2.0",
         "reactstrap": "^8.9.0"

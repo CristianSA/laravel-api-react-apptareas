@@ -14,7 +14,7 @@ class Home extends Component {
     constructor(props){
         super(props);
         this.state = {
-            usuarioData: this.props.location.state,
+            usuarioData: this.props.location.state.data,
             usuarioProyectos: [],
             nuevoProyectoData: {
                 titulo: "",
@@ -86,16 +86,16 @@ class Home extends Component {
         })
     }
     render(){
-        const {id, name, email} = this.state.usuarioData;
+        const {id} = this.state.usuarioData;
         let token = document.querySelector('meta[name="csrf-token"]').getAttribute('content');
         if(token){
             window.axios.defaults.headers.common['X-CSRF-TOKEN'] = token;
         }else{
             console.error('CSRF token not found: https://laravel.com/docs/csrf#csrf-x-csrf-token');
         }
-        return(
+        if(this.props.location.state.usuarioLogueado) return (
             <div className="home container-fluid">
-                <Navba link="Logout" />  
+                <Navba link="Logout" />
                 <div className="row">
                     <div className="col-12 col-md-12">
                         <div className="card bg-dark border-light">
