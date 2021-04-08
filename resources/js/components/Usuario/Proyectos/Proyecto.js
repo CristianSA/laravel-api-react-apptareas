@@ -4,8 +4,13 @@ import { faClock, faEdit, faTrash } from '@fortawesome/free-solid-svg-icons';
 import Moment from 'react-moment';
 import 'moment/locale/es';
 import '../../../../css/app.css';
+import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom';
+import history from 'history/browser';
 
 class Proyecto extends Component{
+    constructor(props){
+        super(props);
+    }
     
     render(){
         const {proyecto} = this.props;
@@ -15,18 +20,10 @@ class Proyecto extends Component{
                     <div className="card bg-secondary border-white">
                         <div className="card-header bg-blue-especial border-light">
                             <div className="row">
-                                <div className="col-12 col-md-8">
+                                <div className="col-12 col-md-12">
                                     <h5 className="card-title text-white">
                                         {proyecto.titulo}
                                     </h5>
-                                </div>
-                                <div className="col-12 col-md-4">
-                                    <button className="btn btn-primary btn-sm ml-1 float-right">
-                                        <FontAwesomeIcon icon={faEdit}/>
-                                    </button>
-                                    <button className={proyecto.estado ? "btn btn-danger btn-sm float-right opacity-5 cursor-default" : "btn btn-danger btn-sm float-right"}>
-                                        <FontAwesomeIcon icon={faTrash}/>
-                                    </button>
                                 </div>
                             </div>
                         </div>
@@ -49,7 +46,7 @@ class Proyecto extends Component{
                                 </div>
                             </div>
                             <div className="row">
-                                <div className="col12 col-md-12">
+                                <div className="col-12 col-md-12">
                                     <span className="badge bg-warning text-white">
                                         Creado hace &nbsp;
                                         <Moment
@@ -63,7 +60,17 @@ class Proyecto extends Component{
                                     </span>
                                 </div>
                             </div>
-                            
+                        </div>
+                        <div className="card-footer">
+                            <Link className="btn btn-primary btn-sm ml-1 float-right btn-block" to={{
+                                pathname:'/proyecto',
+                                state:{
+                                    proyecto: proyecto
+                                }
+                            }}
+                            >
+                                <FontAwesomeIcon icon={faEdit}/>
+                            </Link>
                         </div>
                     </div>
                 </div>

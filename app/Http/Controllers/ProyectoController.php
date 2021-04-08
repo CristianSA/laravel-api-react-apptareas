@@ -32,4 +32,12 @@ class ProyectoController extends Controller
         ]);
         return response()->json($proyecto, 201);
     }
+    public function eliminarProyecto(Request $request, $proyecto_id, $usuario_id){
+        /* Eliminar el proyecto */
+        $proyecto = Proyecto::find($proyecto_id);
+        $proyecto->delete();
+        /* Eliminar proyecto_usuario */
+        $proyecto_usuario = ProyectoUsuario::where('proyecto_id', $proyecto_id)->where('usuario_id', $usuario_id)->delete();
+        return response()->json(null, 204);
+    }
 }

@@ -22,6 +22,8 @@ Route::group(['middleware' => ['web']], function(){
     Route::post('registro', 'App\Http\Controllers\UserController@validarRegistro');
     Route::post('logout','App\Http\Controllers\UserController@logout');
     Route::get('usuario', 'App\Http\Controllers\UserController@usuarioData');
+    /* Proyectos */
     Route::get('proyectos/{usuario_id}', 'App\Http\Controllers\ProyectoController@proyectos');
     Route::post('proyecto/nuevo/{usuario_id}', 'App\Http\Controllers\ProyectoController@guardarProyecto');
+    Route::delete('proyecto/eliminar/{proyecto_id}/{usuario_id}', 'App\Http\Controllers\ProyectoController@eliminarProyecto');
 });
