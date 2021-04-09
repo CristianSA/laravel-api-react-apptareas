@@ -20,8 +20,6 @@ class CreateTareasTable extends Migration
             $table->longText('dificultad');
             $table->boolean('estado');
             $table->longText('duracion');
-            $table->integer('usuario_id');
-            $table->integer('proyecto_id');
             $table->timestamps();
         });
     }

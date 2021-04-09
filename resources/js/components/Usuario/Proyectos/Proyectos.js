@@ -89,6 +89,7 @@ class Proyectos extends Component{
                 <Proyecto
                     proyecto={proyecto}
                     key={proyecto.id}
+                    usuario_data={this.props.usuarioData}
                 />
             )
         });

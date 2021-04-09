@@ -8,7 +8,7 @@ import Index from './Index/Index';
 import Login from './Login/Login';
 import Registro from './Registro/Registro';
 import Home from './Home/Home';
-import EditarProyecto from './Usuario/Proyectos/EditarProyecto';
+import InfoProyecto from './Usuario/Proyectos/InfoProyecto';
 
 
 export default class App extends Component{
@@ -20,7 +20,7 @@ export default class App extends Component{
                     <Route path='/login' component={Login}/>
                     <Route path='/registro' component={Registro}/>
                     <Route path='/home' component={Home}/>
-                    <Route path='/proyecto' component={EditarProyecto}/>
+                    <Route path='/proyecto' component={InfoProyecto}/>
                 </Switch>
             </Router>
         );

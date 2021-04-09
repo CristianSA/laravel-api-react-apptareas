@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faClock, faEdit, faTrash } from '@fortawesome/free-solid-svg-icons';
+import { faClock, faEdit, faFolderOpen, faTrash } from '@fortawesome/free-solid-svg-icons';
 import Moment from 'react-moment';
 import 'moment/locale/es';
 import '../../../../css/app.css';
@@ -14,6 +14,7 @@ class Proyecto extends Component{
     
     render(){
         const {proyecto} = this.props;
+        const {id} = this.props.usuario_data;
         return (
             <div className="col-12 col-sm-6 col-xl-3 mt-2 mb-2">
                 <div className="card-group">
@@ -62,14 +63,19 @@ class Proyecto extends Component{
                             </div>
                         </div>
                         <div className="card-footer">
-                            <Link className="btn btn-primary btn-sm ml-1 float-right btn-block" to={{
+                            <button className="btn btn-primary btn-sm ml-1 float-right btn-block"
+                            >
+                                <FontAwesomeIcon icon={faEdit}/>
+                            </button>
+                            <Link className="btn btn-light btn-sm ml-1 float-right btn-block" to={{
                                 pathname:'/proyecto',
                                 state:{
-                                    proyecto: proyecto
+                                    proyecto: proyecto,
+                                    usuario_id: id
                                 }
                             }}
                             >
-                                <FontAwesomeIcon icon={faEdit}/>
+                                <FontAwesomeIcon icon={faFolderOpen}/>
                             </Link>
                         </div>
                     </div>

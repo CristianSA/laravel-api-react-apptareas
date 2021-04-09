@@ -14,10 +14,11 @@ class Home extends Component {
     constructor(props){
         super(props);
         this.state = {
-            usuarioData: this.props.location.state.data
+            usuarioData: this.props.location.state
         }
     }
     render(){
+        console.log(this.props);
         return(
             <div className="home container-fluid">
                 <Navba link="Logout" />
