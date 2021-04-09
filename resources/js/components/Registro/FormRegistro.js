@@ -23,10 +23,6 @@ class FormRegistro extends Component{
         const {name, email, password, password_confirmation, token} = this.state.registroUsuarioData;
         axios.post('http://127.0.0.1:8000/api/registro', {name, email, password, token})
         .then((response) => {
-            console.log(response);
-            console.log('then response')
-            console.log(this.props);
-            console.log('props')
             /* Accedemos mediante props ya que recibe el atributo props desde Registro */
             this.props.props.history.push({
                 pathname: 'home',

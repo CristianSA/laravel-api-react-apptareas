@@ -14,7 +14,6 @@ class Tareas extends Component{
 
     }
     render(){
-        console.log(this.props)
         return(
             <>
                 <div className="col-12 col-md-12 text-right">

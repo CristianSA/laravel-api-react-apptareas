@@ -84,11 +84,6 @@ class FormLogin extends Component{
                                         let {loginUsuarioData} = this.state
                                         loginUsuarioData.email = e.target.value
                                         this.setState({loginUsuarioData});
-                                            /* console.log(this.props);
-                                            console.log('change email');
-                                            let {email} = this.props.loginUsuarioData;
-                                            this.props.loginUsuarioData.email = e.target.value
-                                            this.setState({email}) */
                                     }}
                                 />
                             </div>

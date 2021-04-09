@@ -60,6 +60,7 @@ class Proyectos extends Component{
     }
     nuevoProyecto(e){
         e.preventDefault();
+        console.log(this.props);
         const {id} = this.props.usuarioData;
         axios.defaults.headers.common['X-CSRF-TOKEN'] = document.querySelector('meta[name="csrf-token"]').getAttribute('content');
         const {titulo, descripcion, sprints, estado,fecha_inicio, fecha_fin, token} = this.state.nuevoProyectoData;
